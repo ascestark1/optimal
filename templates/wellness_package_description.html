@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="bg-white mb-10 mt-12 px-6 py-12 font-sans">
+    <div class="lg:max-w-7xl max-w-lg mx-auto px-6 py-8 bg-white rounded-lg shadow-md">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div class="max-h-80">
+          <img src="{{ package.image.url }}" alt="{{ package.title }}" class="rounded-md object-cover w-full h-full" />
+        </div>
+        <div>
+          <h2 class="text-3xl font-extrabold text-purple-700 mb-4">{{ package.title }}</h2>
+          <p class="text-gray-600 text-sm leading-6">
+          </p>
+          <ul class="list-disc text-sm text-gray-600 space-y-2 pl-4 mt-6">
+            {% for item in package.get_description_list %}
+                <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+          <div class=" mt-5 text-center">
+            <a href="{% url 'booking_package' package.pk %}">
+            <button type="button"
+                class="bg-white py-2.5 min-w-[140px] shadow-xl shadow-cyan-200 rounded-full text-black text-sm tracking-wider font-medium outline-none border border-cyan-600 active:shadow-inner">
+                <p class="px-4">Book for KSH {{ package.price }}</p>
+            </button>
+            </a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}

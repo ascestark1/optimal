@@ -23,3 +23,6 @@ class ConsultationBookingAdmin(admin.ModelAdmin):
 
 admin.site.register(NewsletterSubscriber)
 admin.site.register(ConsultationBooking, ConsultationBookingAdmin)
+admin.site.register(WellnessPackage)
+admin.site.register(Category)
+admin.site.register(Payment)

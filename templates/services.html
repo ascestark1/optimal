@@ -122,5 +122,25 @@
           </div>
         </div>
       </div>
-    
+
+
+
+      <div class="bg-white p-8 mt-12 font-[sans-serif]">
+        <div class="max-w-xl mx-auto text-center">
+          <h2 class="text-gray-800 text-4xl font-extrabold relative after:absolute after:-bottom-5 after:h-1 after:w-1/2 after:bg-cyan-600 after:left-0 after:right-0 after:mx-auto after:rounded-full">View our wellness packages</h2>
+          <div class="mt-12">
+            <p class="text-gray-800 text-base">Our specialists select packages based on age, lifestyle, and risk profile to ensure personalized healthcare solutions.</p>
+          </div>
+  
+          <div class="flex max-sm:flex-col justify-center gap-6 mt-12">
+            <a href="{% url 'wellness_packages' %}">
+            
+            <button type="button"
+              class="min-w-[140px] rounded px-4 py-2.5 text-sm tracking-wider font-semibold outline-none border text-white border-cyan-600 bg-cyan-600 hover:bg-transparent hover:text-cyan-600 transition-all duration-300">View packages</button>
+      </a>
+          </div>
+        </div>
+      </div>
+              
+  
 {% endblock %}

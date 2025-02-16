@@ -1,0 +1,119 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h2 class="text-4xl font-bold text-cyan-800 uppercase mt-10 mb-6">Discover Our Health Pachages</h2>
+<div class="bg-gray-50 font-sans mt-10 p-6">
+   
+    <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-8 gap-12 items-center max-w-6xl max-lg:max-w-2xl max-sm:max-w-sm mx-auto">
+      <div>
+        <h2 class="text-3xl max-md:text-2xl font-extrabold text-gray-800 uppercase leading-10">Men Wellness Packages</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:col-span-2">
+       
+          <!-- Package Cards -->
+          {% for package in men_wellness %}
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:col-span-3">
+              <div class="cursor-pointer rounded overflow-hidden group">
+                  <img src="{{ package.image.url }}" alt="{{ package.title }}" class="w-full h-52 object-cover rounded-md" />
+                  <div class="py-6">
+                      <h3 class="text-xl font-bold text-gray-800 group-hover:text-cyan-500 transition-all">
+                        {{ package.title }}
+                      </h3>
+                  </div>
+                  <div class="text-center">
+                    <a href="{% url 'wellness_package_description' package.pk %}">
+                      <button type="button"
+                          class="bg-white py-2.5 min-w-[140px] shadow-xl shadow-cyan-200 rounded-full text-black text-sm tracking-wider font-medium outline-none border border-cyan-600 active:shadow-inner">
+                          View
+                      </button>
+                    </a>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+      
+       
+      </div>
+    </div>
+  </div>
+
+
+
+  <h2 class="text-4xl font-bold text-cyan-800 uppercase mt-10 mb-6 text-center">Women Wellness Packages</h2>
+
+<div class="bg-gray-50 font-sans mt-10 p-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-8 gap-12 items-center max-w-6xl max-lg:max-w-2xl max-sm:max-w-sm mx-auto">
+        <!-- Heading aligned to the right -->
+      
+
+        <!-- Package Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:col-span-3">
+           
+
+             <!-- Package Cards -->
+          {% for package in women_wellness %}
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:col-span-3">
+              <div class="cursor-pointer rounded overflow-hidden group">
+                  <img src="{{ package.image.url }}" alt="{{ package.title }}" class="w-full h-52 object-cover rounded-md" />
+                  <div class="py-6">
+                      <h3 class="text-xl font-bold text-gray-800 group-hover:text-cyan-500 transition-all">
+                        {{ package.title }}
+                      </h3>
+                  </div>
+                  <div class="text-center">
+                    <a href="{% url 'wellness_package_description' package.pk %}">
+                      <button type="button"
+                          class="bg-white py-2.5 min-w-[140px] shadow-xl shadow-cyan-200 rounded-full text-black text-sm tracking-wider font-medium outline-none border border-cyan-600 active:shadow-inner">
+                          View
+                      </button>
+                      </a>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+
+            
+        </div>
+    </div>
+
+
+
+  <h2 class="text-4xl font-bold text-cyan-800 uppercase mt-10 mb-6 text-center">Other Wellness Packages</h2>
+
+  <div class="bg-gray-50 font-sans mt-10 p-6">
+      <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-8 gap-12 items-center max-w-6xl max-lg:max-w-2xl max-sm:max-w-sm mx-auto">
+          <!-- Heading aligned to the right -->
+        
+  
+          <!-- Package Cards -->
+          {% for package in other_wellness %}
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 lg:col-span-3">
+              <div class="cursor-pointer rounded overflow-hidden group">
+                  <img src="{{ package.image.url }}" alt="{{ package.title }}" class="w-full h-52 object-cover rounded-md" />
+                  <div class="py-6">
+                      <h3 class="text-xl font-bold text-gray-800 group-hover:text-cyan-500 transition-all">
+                        {{ package.title }}
+                      </h3>
+                  </div>
+                  <div class="text-center">
+                    <a href="{% url 'wellness_package_description' package.pk %}">
+                      <button type="button"
+                          class="bg-white py-2.5 min-w-[140px] shadow-xl shadow-cyan-200 rounded-full text-black text-sm tracking-wider font-medium outline-none border border-cyan-600 active:shadow-inner">
+                          View
+                      </button>
+                    </a>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+  
+                
+               
+      </div>
+
+</div>
+
+{% endblock %}
+
+
+
